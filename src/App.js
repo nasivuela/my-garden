@@ -3,13 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-
   useEffect(() => {
-    console.log(process.env);
-
-    fetch(
-      `/.netlify/functions/trefle`
-    )
+    fetch(`/.netlify/functions/trefle`)
+      .then(res => res.json())
+      .then(data => {
+        return fetch(
+          `https://trefle.io/api/plants?token=${data.token}&q=rosemary`
+        );
+      })
       .then(res => res.json())
       .then(data => console.log(data));
   });
