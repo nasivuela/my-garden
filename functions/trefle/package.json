@@ -4,7 +4,6 @@
   "description": "netlify functions:create - how to hide API tokens from your users",
   "main": "token-hider.js",
   "scripts": {
-    "postinstall": "netlify-lambda install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,7 +15,6 @@
   "author": "Netlify",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.0",
-    "netlify-lambda": "^1.6.0"
+    "axios": "^0.18.0"
   }
 }
