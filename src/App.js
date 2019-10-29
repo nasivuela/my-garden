@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  useEffect(() => {
+    console.log(process.env);
+
+    fetch(
+      `https://trefle.io/api/plants?token=${process.env.REACT_APP_TREFLE}&q=Jasminum mesnyi`
+    )
+      .then(res => res.json())
+      .then(data => console.log(data));
+  });
+
   return (
     <div className="App">
       <header className="App-header">
