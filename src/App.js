@@ -8,7 +8,7 @@ function App() {
     console.log(process.env);
 
     fetch(
-      `https://trefle.io/api/plants?token=${process.env.REACT_APP_TREFLE}&q=Jasminum mesnyi`
+      `/.netlify/functions/trefle`
     )
       .then(res => res.json())
       .then(data => console.log(data));
